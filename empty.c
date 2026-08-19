@@ -304,7 +304,7 @@ int main(void)
 					Track_8Sensor_Process_high(track_buf, SPEED_RUN_NORMAL);
 				}
 
-				/* 行驶距离判断：6282个编码器脉冲 ≈ 一圈赛道的总长度 */
+				/* 行驶距离判断：累加行驶距离大于6282mm停车 */
 				if(total_distance >= 6282)
 				{
 					car_stop_flag = 1;  /* 达到目标距离，设置停车标志 */
@@ -334,7 +334,7 @@ int main(void)
 					/* 调用低速型循迹处理函数 */
 					Track_8Sensor_Process_AB(track_buf, SPEED_RUN_NORMAL_1);
 				}
-				/* 行驶距离判断：1800个编码器脉冲后停车 */
+				/* 行驶距离判断：累加行驶距离大于1800mm停车 */
 				if(total_distance >= 1800)
 				{
 					car_stop_flag = 1;
@@ -358,7 +358,7 @@ int main(void)
 					/* 调用低速循迹处理函数， */
 					Track_8Sensor_Process_AA(track_buf, SPEED_RUN_NORMAL_2);
 				}
-				/* 行驶距离判断：6600个编码器脉冲后停车 */
+				/* 行驶距离判断：累加行驶距离大于6600mm停车 */
 				if(total_distance >= 6600)
 				{
 					car_stop_flag = 1;
