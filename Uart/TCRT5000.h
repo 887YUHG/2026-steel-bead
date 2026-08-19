@@ -6,7 +6,7 @@
 #include "ti_msp_dl_config.h"
 #include "encoder.h"
 
-/*��·ѭ��������˵������ SysConfig һ�£�
+/*引脚接线
 OUT1 -- PA0
 OUT2 -- PA1
 OUT3 -- PA10
@@ -35,23 +35,10 @@ OUT8 -- PA23
 #define S7 OUT7
 #define S8 OUT8
 
-    
-// 24�����Ƽ��ٶ�
-#define CAR_SPEED    170    // ֱ��
-#define TURN_SPEED   160    //΢��,
-#define OFFSET_SMALL  70    // ΢��
-#define OFFSET_MID   200    // �е�
-
-#define BIG_TURN     99    // ������
-#define CAR2_SPEED    240    // ֱ��
-// ��ȡ8·������=0����ֽ=1����bit7=S1 ... bit0=S8
-
-
 uint8_t Read_8Track_Sensor(void);
 void Track_8Sensor_Process_high(uint8_t track_buf, float speed_run);
 void Track_8Sensor_Process_AB(uint8_t track_buf, float speed_run);          //a点到b点循迹
 void Track_8Sensor_Process_AA(uint8_t track_buf, float speed_run);          //一整圈带小球循迹
-//void Track_Run(uint8_t v);
 
 unsigned char Get_OUT1(void);
 unsigned char Get_OUT2(void);
